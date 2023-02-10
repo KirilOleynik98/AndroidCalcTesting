@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.testng:testng:7.7.1'
+    testImplementation(
+            "io.appium:java-client:7.6.0",
+            "com.codeborne:selenide:5.25.0",
+            "org.seleniumhq.selenium:selenium-java:2.41.0",
+            "org.aeonbits.owner:owner:1.0.12")
+    testRuntimeOnly 'org.junit.support:testng-engine:1.0.4'
+}
+
+test {
+    useTestNG()
+}
